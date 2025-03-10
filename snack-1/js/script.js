@@ -11,15 +11,43 @@ const bikes = [
     { name: 'Colnago', weight: 8.4 }
 ];
 
-console.log(bikes[2].weight);
+// console.log(bikes[2].weight);
 
-let bikeWeights = [];
+// let bikeWeights = [];
+
+// for (let i = 0; i < bikes.length; i++) {
+//     let currentBike = bikes[i];
+//     let currentBikeWeight = currentBike.weight;
+//     bikeWeights.push(currentBikeWeight);
+// }
+
+// console.log(Math.min(...bikeWeights));
+// console.log(Math.min.apply(Math, bikeWeights));
+
+let minWeight = Number.MAX_VALUE;
+
+const result = [];
 
 for (let i = 0; i < bikes.length; i++) {
-    let currentBike = bikes[i];
-    let currentBikeWeight = currentBike.weight;
-    bikeWeights.push(currentBikeWeight);
+    const currentBike = bikes[i];
+
+    if (minWeight >= currentBike.weight) {
+        minWeight = currentBike.weight;
+    }
 }
 
-console.log(Math.min(...bikeWeights));
-console.log(Math.min.apply(Math, bikeWeights));
+
+
+for (let i = 0; i < bikes.length; i++) {
+    const currentBike = bikes[i];
+
+    if (minWeight === currentBike.weight) {
+        result.push(currentBike);
+    }
+}
+
+if (result.length) {
+    console.log(result);
+} else {
+    console.log('Non ci sono biciclette');
+}
