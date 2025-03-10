@@ -24,11 +24,17 @@ const teamsFouls = [];
 
 for (let i = 0; i < teams.length; i++) {
     let currentTeam = teams[i];
-    let obj = {};
-    obj.name = currentTeam.name;
-    obj.fouls = currentTeam.fouls;
-    teamsFouls.push(obj);
+    // let obj = {};
+    // obj.name = currentTeam.name;
+    // obj.fouls = currentTeam.fouls;
+    const newteam = {
+        name: currentTeam.name,
+        fouls: currentTeam.fouls
+    };
+    // teamsFouls.push(obj);
+    teamsFouls.push(newteam);
 }
+
 console.log(teamsFouls);
 
 
